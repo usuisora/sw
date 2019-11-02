@@ -1,11 +1,17 @@
 <template>
   <div class="home">
-    <h1>Home page</h1>
+    <Cover />
   </div>
 </template>
 <script>
+import Cover from "../components/Cover";
+
 export default {
   name: "home",
-  components: {}
+  components: { Cover }
 };
 </script>
+<style >
+.home {
+}
+</style>
