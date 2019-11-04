@@ -14,7 +14,7 @@
 
 <script>
 import Navbar from "./components/Navbar";
-import NavButton from "./components/NavButton";
+import NavButton from "./components/navbar/NavButton";
 export default {
   name: "App",
   components: {
