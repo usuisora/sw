@@ -32,6 +32,7 @@ export default {
 #app {
   font-family: Courier, monospace;
 }
+
 body {
   position: relative;
   max-width: 1440px;

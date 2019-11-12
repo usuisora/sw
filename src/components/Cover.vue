@@ -3,7 +3,7 @@
     <div class="black-rect align-self-start"></div>
     <div class="cover-content align-center">
       <img class="img" src="../assets/head.svg" alt="attaker head" />
-      <div class="cover-heading">May the force be with you</div>
+      <div class="cover-text">May the force be with you</div>
     </div>
   </div>
 </template>
@@ -24,15 +24,14 @@ export default {};
   .cover-content {
     display: flex;
     position: relative;
-    justify-content: space-evenly;
+    justify-content: start;
+    margin: 0 16px;
     width: 100%;
     top: 18px;
     .img,
-    .cover-heading {
+    .cover-text {
       z-index: 2;
       line-height: 78%;
-    }
-    .cover-heading {
       font-size: 132px;
       max-width: 749px;
     }
