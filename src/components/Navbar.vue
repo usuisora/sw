@@ -7,10 +7,11 @@
         </v-btn>
       </v-toolbar-title>
 
-      <v-toolbar-items>
-        <v-btn text>Link 1</v-btn>
-        <v-btn text>Link 2</v-btn>
-        <v-btn text>Link 3</v-btn>
+      <v-toolbar-items class="links">
+        <v-btn text>Hero</v-btn>
+        <v-btn text>List</v-btn>
+        <v-btn text>CTA block</v-btn>
+        <v-btn text>Footer</v-btn>
       </v-toolbar-items>
 
       <v-spacer></v-spacer>
@@ -26,10 +27,9 @@ export default {};
 <style >
 .v-toolbar__content,
 .logo {
-  padding: 0 !important;
-}
-
-.logo {
   padding: auto 0 !important;
+}
+.links {
+  margin: auto 100px;
 }
 </style>

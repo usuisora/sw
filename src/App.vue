@@ -29,6 +29,7 @@ export default {
 
 <style >
 @import url("https://fonts.googleapis.com/css?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Archivo&display=swap");
 #app {
   font-family: Courier, monospace;
 }
@@ -38,5 +39,9 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 70px;
+  color: black !important;
+}
+.rounded {
+  border-radius: 11px !important;
 }
 </style>

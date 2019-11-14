@@ -1,17 +1,20 @@
 <template>
   <div class="home">
-    <Cover />
-    <Dashboard />
-    <Form />
+    <Hero />
+    <List />
+    <CTA>
+      <v-img src="../assets/starship.svg" alt="ship" />
+    </CTA>
   </div>
 </template>
 <script>
-import Cover from "../components/Cover";
-import Dashboard from "../components/Dashboard";
-import Form from "../components/Form";
+import Hero from "../components/Hero";
+import List from "../components/List";
+import CTA from "../components/CTA";
+
 export default {
   name: "home",
-  components: { Cover, Dashboard, Form }
+  components: { Hero, List, CTA }
 };
 </script>
 <style >

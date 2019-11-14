@@ -1,10 +1,32 @@
 <template>
   <div class="profile">
-    <h1>This is an about page</h1>
+    <Hero />
+    <Description />
+    <CTA>
+      <v-img src="../assets/death-star.svg" alt="ship" />
+    </CTA>
   </div>
 </template>
+
+<script>
+import Hero from "../components/profile/Hero";
+import Description from "../components/profile/Description";
+import CTA from "../components/CTA";
+
+export default {
+  components: {
+    Hero,
+    Description,
+    CTA
+  }
+};
+</script>
+
 <style lang="scss">
 .profile {
   margin: 0 30px;
+  .custom-right {
+    left: 100px;
+  }
 }
 </style>

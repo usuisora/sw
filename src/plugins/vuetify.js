@@ -5,8 +5,14 @@ Vue.use(Vuetify);
 
 export default new Vuetify({
   icons: {
-    iconfont: 'mdi'
+    iconfont: 'mdi',
+
   },
-
-
-});
+  theme: {
+    themes: {
+      primary: '#06f',
+      secondary: '#212121'
+    },
+  }
+}
+);
