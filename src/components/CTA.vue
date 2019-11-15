@@ -1,11 +1,11 @@
 <template>
-  <v-card class="cta d-flex justify-center" height="497" dark>
-    <div class="d-flex align-center justify-space-between">
-      <form class="d-flex flex-column flex-no-wrap justify-space-between" width="250">
+  <v-card class="cta d-flex justify-start" height="497" dark>
+    <div class="d-flex align-center">
+      <form class="form d-flex flex-column flex-no-wrap justify-space-between" width="250">
         <input type="text " class="input" placeholder="EMAIL" v-model="credentials.email" />
         <input type="text " class="input" placeholder="PHONE" v-model="credentials.phone" />
 
-        <v-btn x-large class="button" @click="handleSubmit()" left>
+        <v-btn block x-large class="button" @click="handleSubmit()" left>
           GET YOUR 20% OFF COUPON
           <v-icon right>mdi-pencil</v-icon>
         </v-btn>
@@ -38,11 +38,13 @@ export default {
 <style lang='scss'>
 .cta {
   background: #0066ff !important;
-  width: 1270px !important;
+  // width: 1270px !important;
   height: 497px !important;
   margin: 100px 0;
   border-radius: 20px !important;
-
+  .form {
+    margin-left: 77px;
+  }
   .input {
     background: white;
     color: black;

@@ -3,7 +3,7 @@
     <Hero />
     <Description />
     <CTA>
-      <v-img src="../assets/death-star.svg" alt="ship" />
+      <v-img class="custom-cta-img" src="../assets/strait-ds.svg" alt="ship" />
     </CTA>
   </div>
 </template>
@@ -24,9 +24,11 @@ export default {
 
 <style lang="scss">
 .profile {
-  margin: 0 30px;
-  .custom-right {
-    left: 100px;
+  position: relative;
+  width: 100%;
+  .custom-cta-img {
+    right: -40px;
+    transform: rotate(20deg);
   }
 }
 </style>

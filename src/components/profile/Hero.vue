@@ -18,8 +18,9 @@ export default {};
 @import url("https://fonts.googleapis.com/css?family=Archivo+Black&display=swap");
 .profile {
   .hero {
+    margin: 40px 0 0 0;
     position: relative !important;
-    width: 1297px;
+    max-width: 1297px;
     height: 394px;
     font-family: "Archivo Black";
     text-transform: uppercase;
@@ -28,7 +29,7 @@ export default {};
       line-height: 78%;
       font-size: 132px;
 
-      width: 1027px !important;
+      max-width: 1027px !important;
       margin: auto auto 0 !important;
     }
     .hero-content {
@@ -47,7 +48,7 @@ export default {};
       position: absolute !important;
       z-index: 2;
       background: black;
-      width: 1260px;
+      width: 100%;
       height: 262px !important;
       z-index: 1;
       height: 477px;

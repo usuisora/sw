@@ -1,8 +1,12 @@
 <template>
-  <v-container class="tabs">
+  <div class="tabs">
     <v-row height="250">
       <v-col cols="4">
-        <v-card height="250" class="custom-card d-flex flex-column">
+        <v-card
+          height="250"
+          class="custom-card d-flex flex-column"
+          v-ripple="{class: 'black--text '}"
+        >
           <v-card-title class="custom-title font-weight-bold black--text">passengers</v-card-title>
           <v-spacer />
           <v-card-title class="value primary--text font-weight-bold">29144</v-card-title>
@@ -30,7 +34,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -46,7 +50,7 @@ export default {};
   }
   .custom-title {
     font-size: 18px;
-    text-transform: uppercase;
+    font-variant: small-caps;
     padding: 0;
   }
 

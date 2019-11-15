@@ -21,16 +21,16 @@
       </v-container>
     </div>
 
-    <EditRange title="Crew Size" :max="max_crew_count" :value="crew_range" />
-    <EditRange title="Passengers capacity" :max="max_crew_count" :value="crew_range" />
+    <Range title="Crew Size" :max="max_crew_count" :value="crew_range" />
+    <Range title="Passengers capacity" :max="max_crew_count" :value="crew_range" />
   </v-card>
 </template>
 
 <script>
-import EditRange from "./EditRange";
+import Range from "./Range";
 export default {
   components: {
-    EditRange
+    Range
   },
   data() {
     return {
@@ -56,9 +56,7 @@ export default {
 <style lang='scss'>
 .filters {
   padding: 54px 37px 63px 32px;
-  margin: 0;
-  min-width: 348px;
-  max-height: 765px;
+  // max-height: 765px;
   .filter-title {
     font-family: Archivo Black;
     font-size: 22px;

@@ -20,5 +20,6 @@ export default {
 <style >
 .home {
   position: relative;
+  width: 100%;
 }
 </style>

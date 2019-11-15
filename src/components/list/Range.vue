@@ -1,5 +1,5 @@
 <template>
-  <div class="edit-range">
+  <div class="range">
     <div class="filter-title mb-2">{{title}}</div>
     <v-row>
       <v-col>
@@ -45,14 +45,16 @@ export default {
 };
 </script>
 
-<style>
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+<style lang='scss'>
+.range {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-input[type="number"] {
-  -moz-appearance: textfield;
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 </style>

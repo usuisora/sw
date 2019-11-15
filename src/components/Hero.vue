@@ -21,6 +21,16 @@ export default {};
     height: 582px;
     font-family: "Archivo Black";
     text-transform: uppercase;
+    .black-rect {
+      position: absolute !important;
+      display: flex;
+      background: black;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 1;
+      height: 477px;
+      border-radius: 20px;
+    }
     .hero-content {
       display: flex;
       position: relative;
@@ -35,15 +45,6 @@ export default {};
         font-size: 132px;
         max-width: 749px;
       }
-    }
-
-    .black-rect {
-      position: absolute !important;
-      background: black;
-      width: 100%;
-      z-index: 1;
-      height: 477px;
-      border-radius: 20px;
     }
   }
 }

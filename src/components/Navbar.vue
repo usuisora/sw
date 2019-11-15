@@ -24,12 +24,14 @@
 export default {};
 </script>
 
-<style >
-.v-toolbar__content,
-.logo {
-  padding: auto 0 !important;
-}
-.links {
-  margin: auto 100px;
+<style lang='scss' >
+.navbar {
+  .v-toolbar__content,
+  .logo {
+    padding: auto 0 !important;
+  }
+  .links {
+    margin: auto 100px;
+  }
 }
 </style>

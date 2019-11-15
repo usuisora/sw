@@ -1,6 +1,6 @@
 <template>
   <div class="description">
-    <v-row dense width="1197">
+    <v-row class="d-flex justify-space-between">
       <v-col cols="8">
         <v-card height="297" flat>
           <div class="d-flex flex-column align-content-space-betwee">
@@ -24,18 +24,13 @@
           </div>
         </v-card>
       </v-col>
-
+      <v-spacer />
       <v-col height="297">
         <v-card
-          height="297"
-          width="339"
           v-ripple="{ 'center': true }"
-          :class="` ${hover ? 'primary': 'grey darken-4' } round_square white--text d-flex flex-column
+          :class="` 'secondary round_square white--text d-flex flex-column align-self-end
                    justify-end `"
         >
-          <v-btn v-show="hover" class="mx-2" fab small absolute top right color="white ma-10 ">
-            <v-icon dark>mdi-compare</v-icon>
-          </v-btn>
           <div class="ship-title">EX</div>
           <div class="ship-subtitle">MGLT:40</div>
         </v-card>
@@ -58,13 +53,15 @@ export default {
 <style lang='scss'>
 .profile {
   .description {
-    width: 1197px;
+    margin-right: 46px;
     .round_square {
       border-radius: 11px !important;
       width: 339px !important;
       height: 297px !important;
+      margin: 0 0 0 auto;
       text-decoration: none;
       padding: 34px 40px !important;
+      // margin: 0 !important;
       background: #212121;
     }
     .custom-list {

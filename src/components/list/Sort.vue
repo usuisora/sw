@@ -1,21 +1,14 @@
 <template>
-  <v-container class="sort">
-    <v-row class="d-flex align-center justify-end" height="100px">
-      <v-col cols="12" sm="4 ">
-        <v-overflow-btn
-          depressed
-          dark
-          class="mt-0 pt-0 secondary"
-          height="60"
-          width="117"
-          :items="sortParams"
-          label="Order by"
-          target="#dropdown-example"
-          hide-details
-        ></v-overflow-btn>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-menu offset-y>
+    <template v-slot:activator="{ on }">
+      <v-btn color="primary" dark v-on="on">Dropdown</v-btn>
+    </template>
+    <v-list>
+      <v-list-item v-for="(item, index) in sortParams" :key="index">
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>
@@ -30,10 +23,10 @@ export default {
 
 <style lang="scss">
 .sort {
-  .v-overflow-btn .v-select__slot {
-    background: #212121 !important;
-    height: 40px;
-    color: white !important;
+  .custom-column {
+    position: relative;
   }
+}
+.dropdown {
 }
 </style>

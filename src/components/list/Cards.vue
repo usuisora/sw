@@ -1,10 +1,9 @@
 <template>
-  <v-container>
-    <Sort />
+  <div>
     <v-container class="cards">
-      <v-row cols="12">
-        <v-col v-for="ship in ships" :key="ship">
-          <v-card width="233px" class="pa-2" flat>
+      <v-row>
+        <v-col cols="4" v-for="ship in ships" :key="ship">
+          <v-card flat>
             <v-hover v-slot:default="{ hover }">
               <v-card
                 @click="openProfile(12)"
@@ -42,21 +41,17 @@
       <v-row class="d-flex justify-center">
         <v-btn x-large class="view-more" dark>
           VIEW MORE
+          <v-spacer />
           <v-icon right>mdi-cached</v-icon>
         </v-btn>
       </v-row>
     </v-container>
-  </v-container>
+  </div>
   <!-- </v-container> -->
 </template>
 
 <script>
-import Sort from "./Sort";
-
 export default {
-  components: {
-    Sort
-  },
   data() {
     return {
       ships: [1, 2, 3, 4, 5, 6]
@@ -71,37 +66,39 @@ export default {
 </script>
 
 <style lang='scss'>
-.round_square {
-  border-radius: 11px !important;
-  height: 220px;
-  width: 233px;
-  text-decoration: none;
-  padding: 12px !important;
-  background: #212121;
-}
-
-.ship-title {
-  font-size: 45px !important;
-  font-family: "Archivo Black" !important;
-  line-height: 49px;
-}
-.ship-subtitle {
-  font-size: 24px;
-  line-height: 26px;
-  font-family: "Archivo Black" !important;
-}
-.ship-subtitle,
-.ship-title {
-  text-decoration: none !important;
-}
-.shipinfo {
-  * {
-    font-size: 18px;
-    line-height: 21px;
+.cards {
+  .round_square {
+    border-radius: 11px !important;
+    height: 220px;
+    // width: 233px;
+    text-decoration: none;
+    padding: 12px !important;
+    background: #212121;
   }
-}
-.view-more {
-  width: 238px;
-  z-index: 2;
+
+  .ship-title {
+    font-size: 45px !important;
+    font-family: "Archivo Black" !important;
+    line-height: 49px;
+  }
+  .ship-subtitle {
+    font-size: 24px;
+    line-height: 26px;
+    font-family: "Archivo Black" !important;
+  }
+  .ship-subtitle,
+  .ship-title {
+    text-decoration: none !important;
+  }
+  .shipinfo {
+    * {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+  .view-more {
+    width: 238px;
+    z-index: 2;
+  }
 }
 </style>
