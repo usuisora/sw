@@ -17,12 +17,13 @@
                   class="mx-2"
                   fab
                   small
+                  dipressed
                   absolute
                   top
                   right
                   color="white ma-10 "
                 >
-                  <v-icon dark>mdi-compare</v-icon>
+                  <v-icon dark>mdi-swap-horizontal</v-icon>
                 </v-btn>
                 <div class="ship-title">EX</div>
                 <div class="ship-subtitle">MGLT:40</div>

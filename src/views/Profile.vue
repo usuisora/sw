@@ -3,7 +3,7 @@
     <Hero />
     <Description />
     <CTA>
-      <v-img class="custom-cta-img" src="../assets/strait-ds.svg" alt="ship" />
+      <v-img class="custom-cta-img" src="../assets/strait-ds.svg" alt="ship" contain />
     </CTA>
   </div>
 </template>

@@ -2,11 +2,11 @@
   <v-app id="app">
     <v-content class="white">
       <Navbar>
-        <v-btn dark depressed large width="160">Log in</v-btn>
+        <v-btn class="hidden-sm-and-down" dark depressed large width="160">Log in</v-btn>
       </Navbar>
       <router-view></router-view>
       <Navbar>
-        <v-btn dark depressed large width="160">Na verh</v-btn>
+        <v-btn class="hidden-sm-and-down" dark depressed large width="160">Na verh</v-btn>
       </Navbar>
     </v-content>
   </v-app>
@@ -33,7 +33,7 @@ export default {
 }
 
 body {
-  position: relative;
+  /* position: relative; */
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
@@ -42,5 +42,9 @@ body {
 }
 .rounded {
   border-radius: 11px !important;
+}
+
+.fs-16 {
+  font-size: 16px !important;
 }
 </style>

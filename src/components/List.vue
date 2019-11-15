@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div id="list" class="list">
     <v-row>
       <v-col cols="1">
         <div class="vtext">our ships</div>

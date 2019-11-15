@@ -1,7 +1,7 @@
 <template>
   <div class="description">
     <v-row class="d-flex justify-space-between">
-      <v-col cols="8">
+      <v-col cols="8" sm="4">
         <v-card height="297" flat>
           <div class="d-flex flex-column align-content-space-betwee">
             <div>
@@ -60,7 +60,7 @@ export default {
       height: 297px !important;
       margin: 0 0 0 auto;
       text-decoration: none;
-      padding: 34px 40px !important;
+      padding: 48px 40px !important;
       // margin: 0 !important;
       background: #212121;
     }
@@ -72,6 +72,21 @@ export default {
     .custom-title,
     .button {
       font-size: 22px !important;
+    }
+    .ship-title {
+      font-family: "Archivo Black";
+      font-weight: normal;
+      font-size: 45px;
+      line-height: 49px;
+      text-transform: uppercase;
+    }
+    .ship-subtitle {
+      font-family: "Archivo Black";
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 26px;
+      display: flex;
+      text-transform: uppercase;
     }
   }
 }
