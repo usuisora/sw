@@ -31,10 +31,10 @@
             </v-hover>
 
             <v-list class="shipinfo text-uppercase">
-              <v-list-item class="font-weight-bold">Name</v-list-item>
-              <v-list-item>cr:</v-list-item>
-              <v-list-item>crew:</v-list-item>
-              <v-list-item>psngs:</v-list-item>
+              <v-list-item class="font-weight-bold fs-22">Name</v-list-item>
+              <v-list-item class="font-weight-black">cr:</v-list-item>
+              <v-list-item class="font-weight-black">crew:</v-list-item>
+              <v-list-item class="font-weight-black">psngs:</v-list-item>
             </v-list>
           </v-card>
         </v-col>

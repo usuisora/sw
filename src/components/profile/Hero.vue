@@ -1,7 +1,7 @@
 <template>
   <div class="hero white--text center">
     <div class="black-rect align-self-start d-flex">
-      <div class="hero-text">PROFILE DESCRIPTION</div>
+      <div class="hero-text fs-132" :class="[textSize,'hero-text ']">PROFILE DESCRIPTION</div>
     </div>
     <div class="hero-content d-flex align-start justify-center">
       <img class="img" src="../../assets/head.svg" alt="attaker head" />
@@ -27,7 +27,6 @@ export default {};
     .hero-text {
       z-index: 2;
       line-height: 78%;
-      font-size: 132px;
 
       max-width: 1027px !important;
       margin: auto auto 0 !important;

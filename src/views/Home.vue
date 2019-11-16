@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import Hero from "../components/Hero";
+import Hero from "../components/Hero2";
 import List from "../components/List";
 import CTA from "../components/CTA";
 

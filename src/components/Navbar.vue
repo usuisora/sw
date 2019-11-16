@@ -8,8 +8,12 @@
       </v-toolbar-title>
 
       <v-toolbar-items class="links hidden-sm-and-down">
-        <v-btn text @click="$vuetify.goTo(target, options)" class="text-capitalize fs-16">Hero</v-btn>
-        <v-btn text class="text-capitalize fs-16">List</v-btn>
+        <v-btn
+          text
+          @click="$vuetify.goTo(target, options)"
+          class="text-capitalize fs-16 font-weight-black"
+        >Hero</v-btn>
+        <v-btn text class="text-capitalize fs76">List</v-btn>
         <v-btn text class="text-capitalize fs-16">CTA block</v-btn>
         <v-btn text class="text-capitalize fs-16">Footer</v-btn>
       </v-toolbar-items>
