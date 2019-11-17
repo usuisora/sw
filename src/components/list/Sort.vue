@@ -1,32 +1,31 @@
 <template>
-  <div>
-    <v-menu offset-y tile>
-      <template v-slot:activator="{ on }">
-        <v-btn
-          tile
-          large
-          depressed
-          block
-          color="secondary "
-          v-on="on"
-          @click="isOpened = !isOpened"
-        >
-          {{selected=='' ? 'Order by' : selected}}
-          <v-icon right v-if="!isOpened">mdi-chevron-down</v-icon>
-          <v-icon right v-else>mdi-chevron-up</v-icon>
-        </v-btn>
-      </template>
-      <v-list tile class="secondary mt-2" dark>
-        <v-list-item
-          v-for="(item, index) in sortParams"
-          :key="index"
-          @click="isOpened = !isOpened; selected = item"
-        >
-          <v-list-item-title>{{ item }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-  </div>
+  <v-menu offset-y tile>
+    <template v-slot:activator="{ on }">
+      <v-btn
+        tile
+        x-large
+        depressed
+        color="secondary "
+        class="fs-14"
+        v-on="on"
+        width="270"
+        @click="isOpened = !isOpened"
+      >
+        {{selected=='' ? 'Order by' : selected}}
+        <v-icon right v-if="!isOpened">mdi-chevron-down</v-icon>
+        <v-icon right v-else>mdi-chevron-up</v-icon>
+      </v-btn>
+    </template>
+    <v-list tile class="secondary mt-2" dark>
+      <v-list-item
+        v-for="(item, index) in sortParams"
+        :key="index"
+        @click="isOpened = !isOpened; selected = item"
+      >
+        <v-list-item-title>{{ item }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>
@@ -47,7 +46,5 @@ export default {
   .custom-column {
     position: relative;
   }
-}
-.dropdown {
 }
 </style>

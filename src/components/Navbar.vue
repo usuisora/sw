@@ -3,11 +3,11 @@
     <v-toolbar class="justify-center" flat height="182">
       <v-toolbar-title app>
         <v-btn class="logo white" text large height="156" router to="/">
-          <img src="../assets/Logotype.svg" alt />
+          <v-img src="../assets/Logotype.svg"></v-img>
         </v-btn>
       </v-toolbar-title>
 
-      <v-toolbar-items class="links d-none d-sm-flex">
+      <v-toolbar-items class="d-none d-sm-flex mx-0 mx-md-10">
         <v-btn
           v-for="link in links"
           :key="link.name"
@@ -22,7 +22,7 @@
 
       <v-app-bar-nav-icon
         large
-        class="d-flex d-sm-none black--text"
+        class="d-flex d-sm-none black--text px-10"
         @click="menuToggle = !menuToggle"
       ></v-app-bar-nav-icon>
     </v-toolbar>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import DropDownMenu from "./DropDownMenu";
+import DropDownMenu from "./navbar/DropDownMenu";
 import * as easings from "vuetify/lib/services/goto/easing-patterns";
 
 export default {
@@ -51,7 +51,7 @@ export default {
           target: "#form"
         },
         {
-          footer: "Footer",
+          name: "Footer",
           target: ".footer"
         }
       ],
@@ -80,7 +80,9 @@ export default {
   }
   .links {
     margin: auto 100px;
-    font-size: 16px;
+  }
+
+  @media screen {
   }
 }
 </style>

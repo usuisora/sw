@@ -1,14 +1,8 @@
 <template>
   <div class="profile">
+    <div class="title">{{id}}</div>
     <ProfileHero />
     <Description />
-    <!-- <v-container class="d-none d-md-flex">
-      <CTA :image_src="__dirname+'/src/assets/strait-ds.svg'" />
-    </v-container>
-    <v-container class="d-flex d-md-none">
-      <CTA-mobile :image_src="__dirname+'/src/assets/strait-ds.svg'" />
-    </v-container>-->
-
     <CTA image="strait-ds.svg">
       <v-img src="../assets/strait-ds.svg"></v-img>
     </CTA>
@@ -27,6 +21,15 @@ export default {
     Description,
     CTA
     // "CTA-mobile": CTA_mobile
+  },
+  data() {
+    return {
+      id: this.$route.params.id
+    };
+  }
+  ,
+  created(){
+    localStorage.getItem('starships')
   }
 };
 </script>

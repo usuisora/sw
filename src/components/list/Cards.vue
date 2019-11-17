@@ -1,12 +1,20 @@
 <template>
   <div>
-    <v-container class="cards" v-if="starships.length>0">
+    <v-container class="cards" v-show="starships.length > 0">
       <v-row>
-        <v-col cols="12" md="4" sm="12" xs="12" v-for="starship in starships" :key="starship">
+        <v-col
+          class="pa-6"
+          cols="12"
+          md="4"
+          sm="12"
+          xs="12"
+          v-for="starship in starships"
+          :key="starship.name"
+        >
           <v-card flat>
             <v-hover v-slot:default="{ hover }">
               <v-card
-                @click="openProfile(12)"
+                @click="openProfile(starship.id)"
                 color="black"
                 v-ripple="{ 'center': true }"
                 :class="` ${hover ? 'primary': 'grey darken-4' } round_square white--text d-flex flex-column
@@ -30,11 +38,11 @@
               </v-card>
             </v-hover>
 
-            <v-list class="shipinfo text-uppercase">
-              <v-list-item class="font-weight-bold fs-22">{{starship.name}}</v-list-item>
-              <v-list-item class="font-weight-black">cr:{{starship.cargo_capacity}}</v-list-item>
-              <v-list-item class="font-weight-black">crew:{{starship.crew}}</v-list-item>
-              <v-list-item class="font-weight-black">psngs:{{starship.passengers}}</v-list-item>
+            <v-list class="shipinfo text-uppercase py-4">
+              <v-list-item class="text-capitalize pl-0 fs-22 courier-bold">{{starship.name}}</v-list-item>
+              <v-list-item dense class="font-weight-bold pl-0">cr:{{starship.cargo_capacity}}</v-list-item>
+              <v-list-item dense class="font-weight-bold pl-0">crew:{{starship.crew}}</v-list-item>
+              <v-list-item dense class="font-weight-bold pl-0">psngs:{{starship.passengers}}</v-list-item>
             </v-list>
           </v-card>
         </v-col>

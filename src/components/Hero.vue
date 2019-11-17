@@ -87,11 +87,12 @@ export default {
 
 <style lang='scss'>
 .hero {
+  position: relative;
+  margin-bottom: 100px;
   .black-card {
     border-radius: 20px !important;
   }
-  position: relative;
-  margin-bottom: 100px;
+
   .custom-text {
     line-height: 78.1%;
     font-family: "Archivo Black";

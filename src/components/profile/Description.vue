@@ -7,7 +7,7 @@
         lg="4"
         md="6"
         sm="6"
-        class="d-flex order-0 order-sm-2 justify-center justify-lg-end justify-md-end justify-xl-end justify-sm-center"
+        class="d-flex order-0 order-sm-2 justify-center justify-md-end"
       >
         <v-card
           v-ripple="{ 'center': true }"
@@ -67,6 +67,7 @@ export default {
     .round_square {
       border-radius: 11px !important;
       width: 100%;
+      max-width: 339px;
       height: 297px !important;
       text-decoration: none;
       padding: 48px 40px !important;
@@ -102,6 +103,15 @@ export default {
 @media (max-width: 900px) {
   .profile .description {
     margin: 40px auto !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .profile .description {
+    margin: 40px auto !important;
+    .round_square {
+      max-width: 290;
+    }
   }
 }
 </style>

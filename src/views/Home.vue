@@ -2,14 +2,9 @@
   <div class="home">
     <Hero />
     <List />
-    <div id="form">
-      <v-container class="d-none d-md-flex">
-        <CTA :image_src="img_src" />
-      </v-container>
-      <v-container class="d-flex d-md-none">
-        <CTA-mobile :image_src="img_src" />
-      </v-container>
-    </div>
+    <CTA image="strait-ds.svg">
+      <v-img src="../assets/starship.svg"></v-img>
+    </CTA>
   </div>
 </template>
 <script>
@@ -19,12 +14,7 @@ import CTA from "../components/CTA";
 
 export default {
   name: "home",
-  components: { Hero, List, CTA },
-  data() {
-    return {
-      img_src: __dirname + "/src/assets/strait-ds.svg"
-    };
-  }
+  components: { Hero, List, CTA }
 };
 </script>
 <style >

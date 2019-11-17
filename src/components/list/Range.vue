@@ -2,18 +2,19 @@
   <div class="range">
     <div class="filter-title mb-2">{{title}}</div>
     <v-row>
-      <v-col>
+      <v-col cols="3">
         <v-text-field
           outlined
           dense
           type="number"
+          class="pa-auto"
           hide-details
           :v-model="value[0]"
           :value="value[0]"
         />
       </v-col>
       <v-spacer></v-spacer>
-      <v-col>
+      <v-col cols="3">
         <v-text-field
           outlined
           dense
