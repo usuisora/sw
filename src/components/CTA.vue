@@ -1,19 +1,16 @@
 <template>
-  <v-card class="cta d-flex justify-center align-center" dark height="497">
-    <v-row class="d-flex align-center justify-center" height="300">
-      <v-col cols="6" md="6" class="d-flex justify-center">
-        <form class="form d-flex flex-column justify-space-between">
-          <input type="text " class="input" placeholder="EMAIL" v-model="credentials.email" />
-          <input type="text " class="input" placeholder="PHONE" v-model="credentials.phone" />
-          <v-btn block x-large class="button" @click="handleSubmit()" left>
-            GET YOUR 20% OFF COUPON
-            <v-icon right>mdi-arrow-right</v-icon>
-          </v-btn>
-        </form>
+  <v-card class="cta d-flex justify-center align-center" dark>
+    <v-row class="d-flex flex-row align-center justify-center" height="300">
+      <v-col cols="12" md="6" class="px-10 order-2 order-md-0">
+        <input type="text " class="input" placeholder="EMAIL" v-model="credentials.email" />
+        <input type="text " class="input" placeholder="PHONE" v-model="credentials.phone" />
+        <v-btn block x-large class="button" @click="handleSubmit()" left>
+          GET YOUR 20% OFF COUPON
+          <v-icon right>mdi-arrow-right</v-icon>
+        </v-btn>
       </v-col>
-
-      <v-col cols="6" md="6">
-        <v-img :src="image_src"></v-img>
+      <v-col cols="12" md="6">
+        <slot></slot>
       </v-col>
     </v-row>
   </v-card>
@@ -29,7 +26,7 @@ export default {
       }
     };
   },
-  props: ["image_src"],
+
   methods: {
     handleSubmit() {
       if (this.credentials.email.match(/.+@.+\..+/))
@@ -43,16 +40,11 @@ export default {
 <style lang='scss'>
 .cta {
   width: 100%;
+  max-height: 497px;
   position: relative;
   background: #0066ff !important;
-  margin: 100px 0;
+  margin: 200px 0 60px;
   border-radius: 20px !important;
-  .form {
-    position: relative;
-    width: 90%;
-    margin-left: 77px;
-    position: relative;
-  }
   .input {
     background: white;
     color: black;
@@ -69,8 +61,10 @@ export default {
     margin: 15px 0;
     font-family: Archivo Black;
   }
-
-  @media (max-width: 900px) {
+}
+@media (max-width: 935px) {
+  .cta {
+    max-height: 20000px;
   }
 }
 </style>

@@ -35,19 +35,19 @@ export default {
   },
   data() {
     return { starships: [] };
-  },
-  created() {
-    this.$http
-      .get("https://swapi.co/api/starships")
-      .then(response => {
-        // console.log(response.body);
-        return response.body;
-      })
-      .then(body => {
-        console.log(body);
-        this.starships = body.results;
-      });
   }
+  // created() {
+  //   this.$http
+  //     .get("https://swapi.co/api/starships")
+  //     .then(response => {
+  //       // console.log(response.body);
+  //       return response.body;
+  //     })
+  //     .then(body => {
+  //       console.log(body);
+  //       this.starships = body.results;
+  //     });
+  // }
 };
 </script>
 
