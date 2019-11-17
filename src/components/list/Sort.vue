@@ -18,11 +18,11 @@
     </template>
     <v-list tile class="secondary mt-2" dark>
       <v-list-item
-        v-for="(item, index) in sortParams"
-        :key="index"
-        @click="isOpened = !isOpened; selected = item"
+        v-for="param in params"
+        :key="param.value"
+        @click="isOpened = !isOpened; selected = param.name; setSort(param.value)"
       >
-        <v-list-item-title>{{ item }}</v-list-item-title>
+        <v-list-item-title>{{ param.name }}</v-list-item-title>
       </v-list-item>
     </v-list>
   </v-menu>
@@ -33,11 +33,25 @@ export default {
   data() {
     return {
       selected: "",
-      sortParams: ["crew", "cost", "mglt"],
+      // sortParams: ["crew", "cost", "mglt"],
+      params: [
+        {
+          name: "by crew size",
+          value: "crew"
+        },
+        {
+          name: "BY COST IN CREDITS",
+          value: "cost_in_credits"
+        },
+        {
+          name: "BY MGLT NUMBER",
+          value: "MGLT"
+        }
+      ],
       isOpened: false
     };
   },
-  methods: {}
+  props: ["setSort"]
 };
 </script>
 

@@ -6,6 +6,7 @@
         <input type="text " class="input" placeholder="PHONE" v-model="credentials.phone" />
         <v-btn block x-large class="button" @click="handleSubmit()" left>
           GET YOUR 20% OFF COUPON
+          <v-spacer />
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
       </v-col>

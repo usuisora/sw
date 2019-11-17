@@ -1,8 +1,7 @@
 <template>
   <div class="profile">
-    <div class="title">{{id}}</div>
     <ProfileHero />
-    <Description />
+    <Description :id="id" />
     <CTA image="strait-ds.svg">
       <v-img src="../assets/strait-ds.svg"></v-img>
     </CTA>
@@ -26,10 +25,9 @@ export default {
     return {
       id: this.$route.params.id
     };
-  }
-  ,
-  created(){
-    localStorage.getItem('starships')
+  },
+  created() {
+    localStorage.getItem("starships");
   }
 };
 </script>

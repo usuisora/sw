@@ -1,15 +1,15 @@
 <template>
   <div class="tabs">
     <v-row height="250">
-      <v-col cols="12" lg="4" md="4" sm="6" v-for="item in 6 " :key="item">
+      <v-col cols="12" lg="4" md="4" sm="6" v-for="tab in tabs" :key="tab.name">
         <v-card
           height="250"
           class="custom-card d-flex flex-column"
           v-ripple="{class: 'black--text '}"
         >
-          <v-card-title class="custom-title font-weight-bold black--text">passengers</v-card-title>
+          <v-card-title class="custom-title font-weight-bold black--text">{{tab.name}}</v-card-title>
           <v-spacer />
-          <v-card-title class="value primary--text font-weight-bold">29144</v-card-title>
+          <v-card-title class="value primary--text font-weight-bold">{{tab.value}}</v-card-title>
         </v-card>
       </v-col>
     </v-row>
@@ -17,7 +17,39 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["starship"],
+  data() {
+    return {
+      tabs: [
+        {
+          name: "COST IN CREDITS ",
+          value: this.starship.cost_in_credits
+        },
+        {
+          name: "CREW",
+          value: this.starship.crew
+        },
+        {
+          name: "PASSENGERS",
+          value: this.starship.passengers
+        },
+        {
+          name: "CARGO CAPACITY",
+          value: this.starship.cargo_capacity
+        },
+        {
+          name: "CONSUMABLES",
+          value: this.starship.consumables
+        },
+        {
+          name: "FILMS COUNTER ",
+          value: this.starship.films.length
+        }
+      ]
+    };
+  }
+};
 </script>
 
 <style lang='scss'>

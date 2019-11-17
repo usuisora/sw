@@ -6,7 +6,7 @@
       </v-col>
 
       <v-col id="sort-col " cols="5" class="d-flex d-md-none">
-        <Sort />
+        <Sort :sortParam="sortParam" />
       </v-col>
 
       <v-col id="filter-buttom-col" cols="7" class="d-flex d-md-none justify-end">
@@ -17,15 +17,15 @@
       </v-col>
 
       <v-col id="filters-col" cols="12" md="4" lg="3">
-        <Filters />
+        <Filters :pilots="pilots" :starships="starships" :setFilters="setFilters" />
       </v-col>
 
       <v-col id="cards-col" cols="12" md="7" lg="8">
         <div class="d-flex justify-end">
-          <Sort />
+          <Sort :setSort="setSort" />
         </div>
 
-        <Cards :starships="starships" />
+        <Cards :starships="filteredStarships" />
       </v-col>
     </v-row>
   </div>
@@ -45,7 +45,48 @@ export default {
     // VerticalTitle
   },
   data() {
-    return { starships: [] };
+    return {
+      starships: [],
+      pilots: [],
+      sortParam: "",
+      filters: { pilots: [], crew: [], capacity: [] }
+    };
+  },
+  computed: {
+    sortedStarships: {
+      cache: false,
+      get() {
+        return this.starships
+          .slice()
+          .sort(
+            (a, b) => Number(b[this.sortParam]) - Number(a[this.sortParam])
+          );
+      }
+    },
+    filteredStarships: {
+      cache: false,
+      get() {
+        let filtered = this.sortedStarships;
+        if (this.filters.pilots.length) {
+          filtered = filtered.slice().filter(starship => {
+            let intersection = starship.pilots.filter(pilot =>
+              this.filters.pilots.includes(pilot)
+            );
+            return intersection.length > 0;
+          });
+        }
+        //crew
+        filtered = filtered.slice().filter(starship => {
+          return (
+            (starship.crew >= this.filters.crew[0]) &
+            (starship.crew <= this.filters.crew[1]) &
+            (starship.passengers >= this.filters.capacity[0]) &
+            (starship.passengers <= this.filters.capacity[1])
+          );
+        });
+        return filtered;
+      }
+    }
   },
   methods: {
     async getStarships(url) {
@@ -57,33 +98,45 @@ export default {
         return ship;
       });
       return nships;
+    },
+
+    async getPilots(url) {
+      console.log("fetching");
+      let response = await this.$http.get(url);
+      let pilots = await response.body.results;
+      let npilots = pilots.map(ship => {
+        ship.id = ship.url.match(/\d+/)[0];
+        return ship;
+      });
+      return npilots;
+    },
+
+    setSort(value) {
+      this.sortParam = value;
+    },
+
+    setFilters(filters) {
+      Object.keys(filters).forEach(key => {
+        this.filters[key] = filters[key];
+      });
     }
-
-    // async created() {
-    //   let starships = JSON.parse(localStorage.getItem("starships"));
-
-    //   if (!starships) {
-    //     //request
-    //     starships = await getStarships(url);
-    //     localStorage.setItem("starships", JSON.stringify(starships));
-    //   }
-    //   //return to data
-    //   this.starships = starships;
-    // }
-    // ,
-    // getCachedStarships: () => JSON.parse(localStorage.getItem("starships"))
   },
-  // https://swapi.co/api/starships
   async created() {
     let starships = JSON.parse(localStorage.getItem("starships"));
+    let pilots = JSON.parse(localStorage.getItem("pilots"));
 
     if (!starships) {
+      localStorage.clear();
       //request
       starships = await this.getStarships("https://swapi.co/api/starships");
       localStorage.setItem("starships", JSON.stringify(starships));
+
+      pilots = await this.getStarships("https://swapi.co/api/people");
+      localStorage.setItem("pilots", JSON.stringify(pilots));
     }
     //return to data
     this.starships = starships;
+    this.pilots = pilots;
   }
 };
 </script>

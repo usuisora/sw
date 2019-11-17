@@ -2,7 +2,7 @@
   <div class="range">
     <div class="filter-title mb-2">{{title}}</div>
     <v-row>
-      <v-col cols="3">
+      <v-col cols="6">
         <v-text-field
           outlined
           dense
@@ -14,7 +14,7 @@
         />
       </v-col>
       <v-spacer></v-spacer>
-      <v-col cols="3">
+      <v-col cols="6">
         <v-text-field
           outlined
           dense
@@ -26,7 +26,7 @@
       </v-col>
     </v-row>
 
-    <v-range-slider v-model="value" :max="max" />
+    <v-range-slider v-model="value" @change="changeRange(value)" :max="max" />
   </div>
 </template>
 
@@ -38,11 +38,7 @@ export default {
     };
   },
 
-  props: {
-    title: String,
-    max: Number,
-    value: [Number, Number]
-  }
+  props: { title: String, max: Number, value: Array, changeRange: Function }
 };
 </script>
 
