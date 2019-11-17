@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-container class="cards">
+    <v-container class="cards" v-if="starships.length>0">
       <v-row>
-        <v-col cols="4" v-for="ship in ships" :key="ship">
+        <v-col cols="12" md="4" sm="12" xs="12" v-for="starship in starships" :key="starship">
           <v-card flat>
             <v-hover v-slot:default="{ hover }">
               <v-card
@@ -25,16 +25,16 @@
                 >
                   <v-icon dark>mdi-swap-horizontal</v-icon>
                 </v-btn>
-                <div class="ship-title">EX</div>
-                <div class="ship-subtitle">MGLT:40</div>
+                <div class="ship-title text-uppercase">{{starship.name.slice(0,2)}}</div>
+                <div class="ship-subtitle">MGLT:{{starship.MGLT}}</div>
               </v-card>
             </v-hover>
 
             <v-list class="shipinfo text-uppercase">
-              <v-list-item class="font-weight-bold fs-22">Name</v-list-item>
-              <v-list-item class="font-weight-black">cr:</v-list-item>
-              <v-list-item class="font-weight-black">crew:</v-list-item>
-              <v-list-item class="font-weight-black">psngs:</v-list-item>
+              <v-list-item class="font-weight-bold fs-22">{{starship.name}}</v-list-item>
+              <v-list-item class="font-weight-black">cr:{{starship.cargo_capacity}}</v-list-item>
+              <v-list-item class="font-weight-black">crew:{{starship.crew}}</v-list-item>
+              <v-list-item class="font-weight-black">psngs:{{starship.passengers}}</v-list-item>
             </v-list>
           </v-card>
         </v-col>
@@ -58,6 +58,7 @@ export default {
       ships: [1, 2, 3, 4, 5, 6]
     };
   },
+  props: ["starships"],
   methods: {
     openProfile(id) {
       this.$router.push({ name: "profile", params: { id: id } });

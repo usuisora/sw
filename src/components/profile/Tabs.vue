@@ -1,33 +1,12 @@
 <template>
   <div class="tabs">
     <v-row height="250">
-      <v-col cols="4">
+      <v-col cols="12" lg="4" md="4" sm="6" v-for="item in 6 " :key="item">
         <v-card
           height="250"
           class="custom-card d-flex flex-column"
           v-ripple="{class: 'black--text '}"
         >
-          <v-card-title class="custom-title font-weight-bold black--text">passengers</v-card-title>
-          <v-spacer />
-          <v-card-title class="value primary--text font-weight-bold">29144</v-card-title>
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card height="250" class="custom-card d-flex flex-column">
-          <v-card-title class="custom-title font-weight-bold black--text">passengers</v-card-title>
-          <v-spacer />
-          <v-card-title class="value primary--text font-weight-bold">29144</v-card-title>
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card height="250" class="custom-card d-flex flex-column">
-          <v-card-title class="custom-title font-weight-bold black--text">passengers</v-card-title>
-          <v-spacer />
-          <v-card-title class="value primary--text font-weight-bold">29144</v-card-title>
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card height="250" class="custom-card d-flex flex-column">
           <v-card-title class="custom-title font-weight-bold black--text">passengers</v-card-title>
           <v-spacer />
           <v-card-title class="value primary--text font-weight-bold">29144</v-card-title>

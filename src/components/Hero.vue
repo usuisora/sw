@@ -1,6 +1,6 @@
 <template>
-  <div class="hero2">
-    <v-card id="hero-card" class="d-none d-md-flex black align-end" height="477">
+  <div id="hero" class="hero">
+    <v-card id="hero-card" class="black-card d-none d-md-flex black align-end" height="477">
       <v-row class="custom-row align-center justify-center">
         <v-col
           lg="4"
@@ -25,11 +25,17 @@
       </v-row>
     </v-card>
 
-    <v-img id="hero-modile" class="d-flex d-md-none black align-end" src="../assets/head.svg">
-      <div
-        :class="[textSize,' text-center text-transform-uppercase white--text custom-text archivo-black z-index-4 ']"
-      >MAY THE FORCE BE WITH YOU</div>
-    </v-img>
+    <v-card class="black black-card pl-2 pr-2">
+      <v-img
+        id="hero-modile"
+        class="d-flex d-md-none align-end pt-10 pb-10"
+        src="../assets/head.svg"
+      >
+        <div
+          :class="[textSize,'  text-transform-uppercase white--text custom-text archivo-black z-index-4 ']"
+        >MAY THE FORCE BE WITH YOU</div>
+      </v-img>
+    </v-card>
   </div>
 </template>
 
@@ -80,7 +86,10 @@ export default {
 </script>
 
 <style lang='scss'>
-.hero2 {
+.hero {
+  .black-card {
+    border-radius: 20px !important;
+  }
   position: relative;
   margin-bottom: 100px;
   .custom-text {

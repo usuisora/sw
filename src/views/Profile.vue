@@ -1,23 +1,28 @@
 <template>
   <div class="profile">
-    <Hero />
+    <ProfileHero />
     <Description />
-    <CTA>
-      <v-img class="custom-cta-img" src="../assets/strait-ds.svg" alt="ship" contain />
-    </CTA>
+    <v-container class="d-none d-md-flex">
+      <CTA :image_src="__dirname+'/src/assets/strait-ds.svg'" />
+    </v-container>
+    <v-container class="d-flex d-md-none">
+      <CTA-mobile :image_src="__dirname+'/src/assets/strait-ds.svg'" />
+    </v-container>
   </div>
 </template>
 
 <script>
-import Hero from "../components/profile/Hero";
+import ProfileHero from "../components/profile/ProfileHero";
 import Description from "../components/profile/Description";
 import CTA from "../components/CTA";
+import CTA_mobile from "../components/mobile/CTA-mobile";
 
 export default {
   components: {
-    Hero,
+    ProfileHero,
     Description,
-    CTA
+    CTA,
+    "CTA-mobile": CTA_mobile
   }
 };
 </script>
@@ -27,8 +32,9 @@ export default {
   position: relative;
   width: 100%;
   .custom-cta-img {
-    right: -40px;
+    // right: -40px;
     transform: rotate(20deg);
+    width: 100%;
   }
 }
 </style>

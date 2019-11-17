@@ -1,16 +1,21 @@
 <template>
   <div id="list" class="list">
     <v-row>
-      <v-col cols="1">
-        <div class="vtext">our ships</div>
+      <v-col md="1" sm="12" class="d-flex flex-column">
+        <div class="vtext">our starships</div>
+        <v-spacer></v-spacer>
+        <Sort />
+        <v-btn large depressed class="flat">
+          <v-icon>mdi-filter</v-icon>
+        </v-btn>
       </v-col>
-      <v-col cols="3">
+      <v-col md="3" sm="12">
         <Filters />
       </v-col>
-      <v-col cols="8">
+      <v-col md="8" sm="12">
         <Sort />
 
-        <Cards />
+        <Cards :starships="starships" />
       </v-col>
     </v-row>
   </div>
@@ -27,6 +32,21 @@ export default {
     Cards,
     Sort
     // VerticalTitle
+  },
+  data() {
+    return { starships: [] };
+  },
+  created() {
+    this.$http
+      .get("https://swapi.co/api/starships")
+      .then(response => {
+        // console.log(response.body);
+        return response.body;
+      })
+      .then(body => {
+        console.log(body);
+        this.starships = body.results;
+      });
   }
 };
 </script>
@@ -37,7 +57,25 @@ export default {
   display: flex;
   z-index: 1;
 }
+.vtext {
+  margin-top: 200px;
+  line-height: 26px;
+  font-family: "Archivo Black";
+  font-size: 24px;
+  transform: rotate(-90deg) !important;
+  text-transform: uppercase;
+}
 
+@media (max-width: 900px) {
+  .vtext {
+    margin-top: 0px;
+    line-height: 26px;
+    font-family: "Archivo Black";
+    font-size: 10px;
+    transform: rotate(0) !important;
+    text-transform: uppercase;
+  }
+}
 .invisible-text {
   position: absolute;
   font-family: Archivo Black;

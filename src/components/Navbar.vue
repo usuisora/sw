@@ -1,56 +1,79 @@
 <template>
-  <nav class="navbar">
+  <nav id="nav" class="navbar">
     <v-toolbar class="justify-center" flat height="182">
       <v-toolbar-title app>
-        <v-btn class="logo white" depressed large height="156" router to="/">
+        <v-btn class="logo white" text large height="156" router to="/">
           <img src="../assets/Logotype.svg" alt />
         </v-btn>
       </v-toolbar-title>
 
-      <v-toolbar-items class="links hidden-sm-and-down">
+      <v-toolbar-items class="links d-none d-sm-flex">
         <v-btn
+          v-for="link in links"
+          :key="link.name"
           text
-          @click="$vuetify.goTo(target, options)"
+          @click="$vuetify.goTo(link.target, options)"
           class="text-capitalize fs-16 font-weight-black"
-        >Hero</v-btn>
-        <v-btn text class="text-capitalize fs76">List</v-btn>
-        <v-btn text class="text-capitalize fs-16">CTA block</v-btn>
-        <v-btn text class="text-capitalize fs-16">Footer</v-btn>
+        >{{link.name}}</v-btn>
       </v-toolbar-items>
 
       <v-spacer></v-spacer>
       <slot class="hidden-sm-and-down"></slot>
 
-      <v-app-bar-nav-icon large class="hidden-md-and-up black--text"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        large
+        class="d-flex d-sm-none black--text"
+        @click="menuToggle = !menuToggle"
+      ></v-app-bar-nav-icon>
     </v-toolbar>
-    <MobileMenu />
+    <DropDownMenu :links="links" v-show="menuToggle " :options="options" />
   </nav>
 </template>
 
 <script>
-import MobileMenu from "./MobileMenu";
+import DropDownMenu from "./DropDownMenu";
 import * as easings from "vuetify/lib/services/goto/easing-patterns";
 
 export default {
   data() {
     return {
-      target: "#list",
+      links: [
+        {
+          name: "Hero",
+          target: ".hero"
+        },
+        {
+          name: "List",
+          target: "#list"
+        },
+        {
+          name: "CTA Block",
+          target: "#form"
+        },
+        {
+          footer: "Footer",
+          target: ".footer"
+        }
+      ],
+
+      menuToggle: false,
       options: {
         duration: 246,
-        offset: -200,
+        offset: 10,
         easing: "easeInOutCubic",
         easings: Object.keys(easings)
       }
     };
   },
   components: {
-    MobileMenu
+    DropDownMenu
   }
 };
 </script>
 
 <style lang='scss' >
 .navbar {
+  margin: 0;
   .v-toolbar__content,
   .logo {
     padding: auto 0 !important;

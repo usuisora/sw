@@ -5,19 +5,20 @@
         <v-btn class="hidden-sm-and-down" dark depressed large width="160">Log in</v-btn>
       </Navbar>
       <router-view></router-view>
-      <Navbar>
-        <v-btn class="hidden-sm-and-down" dark depressed large width="160">Na verh</v-btn>
-      </Navbar>
+      <Footer />
     </v-content>
   </v-app>
 </template>
 
 <script>
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 export default {
   name: "App",
   components: {
-    Navbar
+    Navbar,
+    Footer
   },
   data: () => ({
     //
@@ -31,12 +32,30 @@ export default {
 #app {
   font-family: Courier, monospace;
 }
+html {
+  position: relative;
+
+  width: 100vw;
+  margin: 0;
+  padding: 0 !important;
+}
 body {
+  position: relative;
   max-width: 1330px;
-  width: 92%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  overflow-x: hidden;
+  // width: 100%;
+  // margin: 0 auto;
+  // color: black !important;
+}
+#app {
+  width: 100%;
+  // margin: 0 auto !impo;
   color: black !important;
 }
+
 .rounded {
   border-radius: 11px !important;
 }
